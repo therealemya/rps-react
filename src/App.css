@@ -1,14 +1,22 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Acme&family=Bangers&family=Lalezar&display=swap');
+body {
+    background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
+.App {
+  text-align: center;
+  
+}
+
+.App img {
+  height: 35vmin;
   pointer-events: none;
+  border-radius: 100px;
+  border: solid black 5px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .App img {
     animation: App-logo-spin infinite 20s linear;
   }
 }
@@ -35,4 +43,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.welcome {
+    font-family: 'Bangers', cursive;
+    background-color:#ff9002;
+   
+}
+
+.welcome p {
+font-family: 'Aclonica', sans-serif;
+}
+
+.welcome .buttons{
+    justify-content: flex-start;
+    font-family: 'Lalezar', cursive;
 }

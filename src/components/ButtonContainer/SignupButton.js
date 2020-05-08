@@ -6,6 +6,7 @@ function SignupButton(){
     const Button = withRouter(({history}) => (
         <button 
         type="button" 
+        class="btn btn-primary"
         onClick={() => {history.push('/signup')}}
         > Signup </button>
     ));
