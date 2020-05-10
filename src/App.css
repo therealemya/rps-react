@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Acme&family=Bangers&family=Lalezar&display=swap');
 body {
-    background-color: black;
+    background-color: rgb(247, 244, 216);
 }
 
 .App {
@@ -48,6 +48,9 @@ body {
 .welcome {
     font-family: 'Bangers', cursive;
     background-color:#ff9002;
+    height: 100vmax;
+    border: solid #282c34 5px;
+
    
 }
 
@@ -58,4 +61,5 @@ font-family: 'Aclonica', sans-serif;
 .welcome .buttons{
     justify-content: flex-start;
     font-family: 'Lalezar', cursive;
+    
 }
