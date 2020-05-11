@@ -2,13 +2,13 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 
-function CancelButton(){
+function TermsButton(){
     const Button = withRouter(({history}) => (
         <button 
         type="button"
-        className="btn btn-dark" 
-        onClick={() => {history.push('/')}}
-        > Cancel </button>
+        className="btn btn-link" 
+        onClick={() => {history.push('/terms')}}
+        > Terms and Conditions </button>
     ));
 
 
@@ -17,4 +17,4 @@ function CancelButton(){
 
 }
 
-export default CancelButton;
+export default TermsButton;

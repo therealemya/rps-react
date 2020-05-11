@@ -13,6 +13,7 @@ function Welcome() {
             <div>
                 <img src={logolite} alt="logo" />
             </div>
+            <br/>
             <div className="buttons">
                 <LoginButton />
                 <SignupButton />

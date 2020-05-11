@@ -5,6 +5,7 @@ import './App.css';
 import Welcome from './components/LoginContainer/Welcome';
 import Login from './components/LoginContainer/Login';
 import Signup from './components/LoginContainer/Signup';
+import Terms from './components/CustomContainer/Terms';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
                 <Route path='/welcome' component={Welcome} />
                 <Route path='/login' component={Login} />
                 <Route path='/signup' component={Signup} />
+                <Route path='/terms' component={Terms} />
                 {/* <Route path='/user' component={UserHome} />
                 <Route path='/user/stats' component={UserStats} />
                 <Route path='/user/donation' component={Donation} /> */}

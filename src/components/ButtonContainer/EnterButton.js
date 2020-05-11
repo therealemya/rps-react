@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 function EnterButton(){
     const Button = withRouter(({history}) => (
-        <button 
+        <button       
         type="button" 
         onClick={() => {history.push('/user')}}
         > Enter </button>

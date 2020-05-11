@@ -1,17 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Acme&family=Bangers&family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Acme&family=Bangers&family=Lalezar&family=Varela+Round&display=swap');
+
 body {
     background-color: rgb(247, 244, 216);
+    
+    font-family: 'Varela Round', sans-serif;
+    
 }
 
 .App {
   text-align: center;
   
+  
 }
 
 .App img {
-  height: 35vmin;
+  height: 50vmin;
   pointer-events: none;
-  border-radius: 100px;
+  border-radius: 150px;
   border: solid black 5px;
 }
 
@@ -36,19 +41,19 @@ body {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .welcome {
     font-family: 'Bangers', cursive;
     background-color:#ff9002;
-    height: 100vmax;
+    height: 75vmax;
     border: solid #282c34 5px;
 
    
@@ -61,5 +66,36 @@ font-family: 'Aclonica', sans-serif;
 .welcome .buttons{
     justify-content: flex-start;
     font-family: 'Lalezar', cursive;
+   
     
+}
+
+.signup form input, .login form input {
+    border-radius: 25px;
+    border: #282c34 solid 1px
+
+}
+
+.signup, .login, .terms {
+    justify-content: center;
+    border: solid #282c34 5px;
+    height: 75vmax;
+}
+
+button{
+    font-family: 'Lalezar', cursive;
+}
+
+.terms p{
+    font-size: 11px;
+}
+
+.enter, .submit {
+    border:#282c34 solid 3px;
+    color: #282c34;
+    background-color: #ff9002;
+}
+
+.login-text{
+    text-align: left;
 }
