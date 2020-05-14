@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Acme&family=Bangers&family=Lalezar&family=Varela+Round&display=swap');
 
 body {
-    background-color: rgb(247, 244, 216);
+    background-color: rgb(255, 228, 179);
     
     font-family: 'Varela Round', sans-serif;
     
@@ -9,11 +9,12 @@ body {
 
 .App {
   text-align: center;
-  
+  border: solid #282c34 5px;
+  height: 75vmax;
   
 }
 
-.App img {
+.App .welcomelogo {
   height: 50vmin;
   pointer-events: none;
   border-radius: 150px;
@@ -59,6 +60,14 @@ body {
    
 }
 
+.usercontainer h1{
+  font-family: 'Bangers', cursive;   
+}
+
+.usercontainer p{
+  font-family: 'Aclonica', sans-serif;
+}
+
 .welcome p {
 font-family: 'Aclonica', sans-serif;
 }
@@ -94,8 +103,108 @@ button{
     border:#282c34 solid 3px;
     color: #282c34;
     background-color: #ff9002;
+    font-family: 'Lalezar', cursive;
 }
 
 .login-text{
     text-align: left;
 }
+
+#login-btn-group{
+  font-family: 'Lalezar', cursive;
+}
+
+#dropdown-basic{
+  position: absolute;
+  left: 2px;
+  margin-left: 10px;
+  margin-top: 10px;
+  color:#282c34;
+  background-color: #ff9002;
+  border: solid  #282c34 4px;
+  width: 65px;
+  border-radius: 50px;
+    
+}
+.fa-user-astronaut{
+  font-size: 25px;
+}
+
+.user-home{
+  border: solid #282c34 5px;
+  height: 75vmax;
+}
+
+.usercontainer{
+  height: 50vmax;  
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#user-menu{
+  background-color: silver;
+  border: solid black 2px;
+}
+
+#game-button{
+  border:#282c34 solid 3px;
+  color: #282c34;
+  background-color: #ff9002;
+  width: 150px;
+  border-radius: 15px;
+  font-family: 'Lalezar', cursive;
+}
+
+#donation-container{
+  height: 75vmax;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.donations h1{
+  font-family: 'Bangers', cursive;  
+}
+
+.donations a{
+  font-family: 'Lalezar', cursive;
+}
+
+#donation-img img{
+  height: 50%;
+  width: 30%;
+  border: solid #282c34 2px;
+  border-radius: 5px;
+  
+}
+
+#donation-img{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.rules h5{
+  font-family: 'Bangers', cursive;
+}
+
+.user-stats{
+  height: 50vmax;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#profile-picture .fa-user-astronaut{
+  font-size: 100px;
+  display: flex;  
+}
+
+.user-stats-row-1{
+  align-items: center;
+}
+

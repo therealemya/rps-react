@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 
-function LoginButton(){
+export default class LoginButton extends Component{
+
+    render(){
     const Button = withRouter(({history}) => (
         <button 
         type="button" 
@@ -14,7 +16,5 @@ function LoginButton(){
 
     return <Button />    
     
-
+    }
 }
-
-export default LoginButton;
