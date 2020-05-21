@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import rules from '../../images/rules.png';
 import GotItButton from '../ButtonContainer/GotItButton';
 
 export default class Rules extends Component {

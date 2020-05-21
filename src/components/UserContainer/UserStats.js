@@ -1,39 +1,47 @@
 import React, { Component } from 'react';
-import DropDown from '../CustomContainer/DropDown';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom';
+
 
 export default class UserStats extends Component {
 
     render() {
         return (
             <div className="userStats">
-                <DropDown/> 
+                <div className="return">
+                    <Link to="/user"><button><i class="fas fa-arrow-alt-circle-left"></i></button></Link>
+                </div>
 
-                <Container className="user-stats">
-                    <h1> [Player Name] </h1>
-                <br/>
+                <br />
 
-                <Row className="user-stats-row-1">
-                    
-                        <Col>Ranking</Col>
-                        <Col id="profile-picture"><i class="fas fa-user-astronaut"></i></Col>
-                        <Col>Achievements</Col>
-                    
-                </Row>
+                <div className="user-header">
+                    <h1><i class="fas fa-user-ninja"></i> Player</h1>
+                    <br />
+                </div>
+                <div className="user-rank">
+                    Ranking:
+                    Lvl 25
+                </div>
 
-                <br/>
-                
+                <div className="user-stats-record">
 
-                <Row className="user-stats-row-2">
-                    
-                        <Col>Wins:</Col>
-                        <Col>Loses:</Col>
-                        <Col>Draws:</Col>
-                    
-                    </Row>
-                </Container>
+                    <div className="win"> Wins: </div>
+                    <div className="loss"> Losses: </div>
+                    <div className="tie"> Ties: </div>
+
+                </div>
+
+                <br />
+
+
+                <div className="achievements">
+                    <p id="title">Achievements</p>
+                    <div className="achievement-items">
+                        <i class="fas fa-award"></i>
+                        <i class="fas fa-medal"></i>
+                        <i class="fas fa-crown"></i>
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                </div>
             </div>
         );
     }

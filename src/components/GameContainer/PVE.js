@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import ExitGameButton from '../ButtonContainer/ExitGameButton';
-import rock from '../../images/rock.png';
-import paper from '../../images/paper.png';
-import scissors from '../../images/scissors.png';
 
 
 export default class PVE extends Component {
@@ -25,6 +22,25 @@ export default class PVE extends Component {
             playerChoice: e.target.value
         })
     }  
+
+    rockSelect = () => {
+        this.setState({
+            playerChoice: "rock"
+        })
+    }
+
+    paperSelect = () => {
+        this.setState({
+            playerChoice: "paper"
+        })
+    }
+
+    scissorsSelect = () => {
+        this.setState({
+            playerChoice: "scissors"
+        })
+    }
+
 
     //Game Logic
     RPSGameplay(playerPick, computerPick) {      
@@ -102,31 +118,38 @@ export default class PVE extends Component {
                     </div>
                 </div>
                 <div className="result-message-display"> 
-                <h6>You Chose: {showPlayer} </h6>
-                <h6>{showComputer} </h6>
-                <p>{showResult}</p>    
+                <p>You Chose: {showPlayer} </p>
+                <p>{showComputer} </p>
+                <p id="result"><b>{showResult}</b></p>    
                 </div>
                 
                 <div className="player-choices">
                     <button
                         type="button"
                         value="rock"
-                        onClick={this.playerAction}
-                    >Rock
+                        onClick={this.rockSelect}
+                    >
+                        <i class="fas fa-hand-rock" 
+                        onClick={this.rockSelect} ></i>
                     </button>
 
                     <button
                         type="button"
                         value="paper"
-                        onClick={this.playerAction}
-                    >Paper
+                        onClick={this.paperSelect}
+                    >
+                        <i class="fas fa-hand-paper"
+                        onClick={this.paperSelect}></i>
                     </button>
 
                     <button
                         type="button"
                         value="scissors"
-                        onClick={this.playerAction}
-                    >Scissors
+                        onClick={this.scissorsSelect}
+                    >
+                        <i class="fas fa-hand-scissors"
+                        onClick={this.scissorsSelect}
+                        ></i>
                     </button>
 
                 </div>

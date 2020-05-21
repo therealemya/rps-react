@@ -30,7 +30,7 @@ export default class App extends Component {
                         <Route path='/terms' component={Terms} />
                         <Route exact path='/user' component={UserHome} />
                         <Route path='/user/rules' component={Rules} />
-                        <Route path='/user/stats' component={UserStats} />
+                        <Route path='/user/profile' component={UserStats} />
                         <Route path='/user/donation' component={Donation} />
                         <Route path='/user/pve' component={PVE} />
                     </Switch>
