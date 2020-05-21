@@ -7,7 +7,7 @@ export default class SignupButton extends Component {
         const Button = withRouter(({ history }) => (
             <button
                 type="button"
-                class="btn btn-primary"
+                class="btn btn-primary grey-button"
                 onClick={() => { history.push('/signup') }}
             > Signup </button>
         ));

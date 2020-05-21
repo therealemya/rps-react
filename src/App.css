@@ -1,210 +1,265 @@
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Acme&family=Bangers&family=Lalezar&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Lalezar&family=Montserrat:wght@500&display=swap');
 
-body {
-    background-color: rgb(255, 228, 179);
-    
-    font-family: 'Varela Round', sans-serif;
-    
+html{
+ 
+  font-family: 'Montserrat', sans-serif;
+  border: #282c34 solid;
+  height: 100%;
+  width: auto;
+  margin: 0;
+
 }
 
-.App {
+.App{
+
+  display: flex;
+  align-content: flex-end;
+  justify-content: center;  
   text-align: center;
-  border: solid #282c34 5px;
-  height: 75vmax;
+  height: 100%;
+  width: auto;
+  margin: 0; 
+
+}
+
+.App button{
+
+  height: 10vmax;  
+  font-family: 'Bangers', cursive;
+  font-size: 5vmax;  
+  border: #282c34 solid;  
+  border-radius: 15px;
+  background-color: #ff9002;
+  color: whitesmoke;
+
+}
+
+.App button:hover{
+  background-color: rgb(146, 255, 73);
+  border-color: rgb(81, 156, 255);
+}
+
+.App h1{
+
+  font-family: 'Bangers', cursive;
+  font-size: 12vmax;    
+
+}
+
+.App h5{
+
+  font-family: 'Lalezar', cursive;
+  font-size: 5vmax;
+
+}
+
+.welcomelogo{
+
+  height: 35vmax;
+  width: auto;
+  border: solid #282c34 3px;
+  border-radius: 15px 50px;
+
+}
+
+.welcome{
+
+  background-color: #ff9002;
   
 }
 
-.App .welcomelogo {
-  height: 50vmin;
-  pointer-events: none;
-  border-radius: 150px;
-  border: solid black 5px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App img {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-.welcome {
-    font-family: 'Bangers', cursive;
-    background-color:#ff9002;
-    height: 75vmax;
-    border: solid #282c34 5px;
-
-   
-}
-
-.usercontainer h1{
-  font-family: 'Bangers', cursive;   
-}
-
-.usercontainer p{
-  font-family: 'Aclonica', sans-serif;
-}
-
-.welcome p {
-font-family: 'Aclonica', sans-serif;
-}
-
-.welcome .buttons{
-    justify-content: flex-start;
-    font-family: 'Lalezar', cursive;
-   
-    
-}
-
-.signup form input, .login form input {
-    border-radius: 25px;
-    border: #282c34 solid 1px
+.welcome, .login, .signup, .user-home, .userStats{
+  
+  justify-self: center;
+  align-self: center;
+  height: 100vmax;
+  width: 100vmax;
 
 }
 
-.signup, .login, .terms {
-    justify-content: center;
-    border: solid #282c34 5px;
-    height: 75vmax;
-}
-
-button{
-    font-family: 'Lalezar', cursive;
-}
-
-.terms p{
-    font-size: 11px;
-}
-
-.enter, .submit {
-    border:#282c34 solid 3px;
-    color: #282c34;
-    background-color: #ff9002;
-    font-family: 'Lalezar', cursive;
-}
-
-.login-text{
-    text-align: left;
-}
-
-#login-btn-group{
-  font-family: 'Lalezar', cursive;
-}
-
-#dropdown-basic{
-  position: absolute;
-  left: 2px;
-  margin-left: 10px;
-  margin-top: 10px;
-  color:#282c34;
+.donations{
+  height: 100vmax;
+  width: 100vmax;
   background-color: #ff9002;
-  border: solid  #282c34 4px;
-  width: 65px;
-  border-radius: 50px;
-    
 }
-.fa-user-astronaut{
+
+.btn-group{
+
+  width: 90.07%;
+  height: 7.5vmax;  
+  
+}
+
+.App .btn-link{
+
+  border-style: none;
+  color:rgb(81, 156, 255);
+  background-color: transparent;
+  font-size: 4vmax;
+}
+
+.App .grey-button{
+  background-color: #282c34;
+}
+
+.App input{
+  height: 5.5vmax;
+  width: 75%;
+  border: solid 2px black;
+  border-radius: 25%;
+  text-align: center;
   font-size: 25px;
 }
 
-.user-home{
+.App .signup label{
+  font-size: 17px;
+}
+
+.App .user-home button{
+  width: 65%;
+  height: auto;
+  margin: 1%;
+  
+}
+
+.App .user-home img{
+  width: 80%;
   border: solid #282c34 5px;
-  height: 75vmax;
+  border-radius: 50%;
+  margin-top: 5px;
 }
 
-.usercontainer{
-  height: 50vmax;  
-  display: flex;  
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
+.App .user-home .btn-link{
+  width: 75%;
 }
 
-#user-menu{
-  background-color: silver;
-  border: solid black 2px;
+.App .donations img{
+  width: 100%;
 }
 
-#game-button{
-  border:#282c34 solid 3px;
+.App .donations .donation-info{
+  border: solid #282c34 5px;
+  background-color: beige;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 40px;
+}
+
+.App .donations .yes-btn{
+  background-color: rgb(100, 173, 241);
   color: #282c34;
-  background-color: #ff9002;
-  width: 150px;
-  border-radius: 15px;
-  font-family: 'Lalezar', cursive;
+  width: 92%;
+  margin-bottom: 15px;
 }
 
-#donation-container{
-  height: 75vmax;  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.donations h1{
-  font-family: 'Bangers', cursive;  
-}
 
-.donations a{
-  font-family: 'Lalezar', cursive;
-}
-
-#donation-img img{
-  height: 50%;
-  width: 30%;
-  border: solid #282c34 2px;
-  border-radius: 5px;
+.App .rules img{
+  width: 100%;
+  height: 30vmax;
   
 }
 
-#donation-img{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.App .rules h1{
+  margin-top: 15px;
+  font-size: 500%;
 }
 
-.rules h5{
+.App .rules .vs-cpu{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;  
+  background-color: rgb(73, 164, 248);
+  border: solid #282c34 5px;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+
+
+.App .rules .vs-cpu h5{
+  background-color: #ff9002;
+  border: #282c34 solid 5px;
+  width: 75%;
+  position: relative;
+  top: -18px;
+  border-radius: 30%;
+  
+  
+}
+
+.App .rules .vs-player h5{
+  background-color: #ff9002;
+  border: #282c34 solid 5px;
+  width: 75%;
+  position: relative;
+  top: -18px;
+  left: 25%;
+  border-radius: 30%;
+  
+}
+
+.App .rules .vs-player{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  background-color: rgb(73, 164, 248);
+  border: #282c34 solid 5px;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.App .rps-game .scoreboard {
+  display: flex;  
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: black;
+  height: 25vmax;
+  margin-top: 15%;
+}
+.App .rps-game .scoreboard .wins{
+  background-color: rebeccapurple;
+  width: 50%;
+  font-size: 55px;
+  font-family: 'Bangers', cursive;
+
+}
+.App .rps-game .scoreboard .losses{
+  background-color: red;
+  width: 50%;
+  font-size: 55px;
   font-family: 'Bangers', cursive;
 }
 
-.user-stats{
-  height: 50vmax;  
+.App .rps-game .player-choices{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50%; 
+  width: 100%;
 }
 
-#profile-picture .fa-user-astronaut{
-  font-size: 100px;
-  display: flex;  
+.App .rps-game .player-choices button{  
+  width: 15vmax;
+  height: 15vmax;
+  border: none;
+  background-color: transparent;
 }
 
-.user-stats-row-1{
-  align-items: center;
+.App .rps-game .player-choices img{
+  height: 100%;
+  
 }
+
+
+.App .rps-game .confirm-choice{
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.App .rps-game .confirm-choice button{
+  width: 40%;
+  
+}
+
 

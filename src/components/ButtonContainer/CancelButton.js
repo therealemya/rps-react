@@ -8,7 +8,7 @@ export default class CancelButton extends Component {
         const Button = withRouter(({ history }) => (
             <button
                 type="button"
-                className="btn btn-dark"
+                className="btn btn-dark grey-button"
                 onClick={() => { history.push('/') }}
             > Cancel </button>
         ));

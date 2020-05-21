@@ -12,7 +12,7 @@ export default class DropDown extends Component {
                 </Dropdown.Toggle>
                 <Dropdown.Menu id="user-menu">
 
-                    <Dropdown.Item href="/user"><b>My Profile</b></Dropdown.Item>
+                    <Dropdown.Item href="/user"><b>Home</b></Dropdown.Item>
                     <Dropdown.Item href="/user/stats"><b>Stats</b></Dropdown.Item>
                     <Dropdown.Item href="/user/donation"><b>Donations</b></Dropdown.Item> 
                     <Dropdown.Item href="/login"><b>Logout</b></Dropdown.Item>                   

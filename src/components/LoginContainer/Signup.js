@@ -43,7 +43,7 @@ export default class Signup extends Component {
                         <small>**Password must contain at least 8 characters**</small>
                         <br />
 
-                        <div className="custom-control custom-checkbox my-1 mr-sm-2">
+                        <div className="custom-control custom-checkbox">
                             <input type="checkbox" className="custom-control-input" id="customControlInline" />
                             <label className="custom-control-label" for="customControlInline">
                                 <small>I have read and agreed to the terms and conditions</small>

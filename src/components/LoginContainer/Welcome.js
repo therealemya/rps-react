@@ -11,7 +11,7 @@ export default class Welcome extends Component {
             <div className="welcome">
 
                 <h1>Welcome</h1>
-                <p><b>A World Wide Game Of FUN!!</b></p>
+                <h5>A World Wide Game Of FUN!!</h5>
 
                 <div>
                     <img src={logolite} alt="logo" className="welcomelogo" />
@@ -19,7 +19,8 @@ export default class Welcome extends Component {
 
                 <br />
 
-                <div className="buttons">
+                <div class="btn-group" id="login-btn-group" role="group">
+                    {/* <button type="button" className="btn btn-primary enter">Enter</button> */}
                     <LoginButton />
                     <SignupButton />
                 </div>

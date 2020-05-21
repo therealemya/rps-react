@@ -14,6 +14,7 @@ import UserStats from './components/UserContainer/UserStats';
 import Donation from './components/CustomContainer/Donation';
 import Terms from './components/CustomContainer/Terms';
 import Rules from './components/CustomContainer/Rules';
+import PVE from './components/GameContainer/PVE';
 
 export default class App extends Component {
 
@@ -31,6 +32,7 @@ export default class App extends Component {
                         <Route path='/user/rules' component={Rules} />
                         <Route path='/user/stats' component={UserStats} />
                         <Route path='/user/donation' component={Donation} />
+                        <Route path='/user/pve' component={PVE} />
                     </Switch>
                 </div>
             </Router>
