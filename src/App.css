@@ -239,10 +239,8 @@ html{
 }
 
 .App .rps-game .player-choices button{  
-  width: 15vmax;
+  
   height: 15vmax;
-  border: none;
-  background-color: transparent;
 }
 
 .App .rps-game .player-choices img{
