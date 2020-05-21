@@ -96,7 +96,7 @@ html{
   color:rgb(81, 156, 255);
   background-color: transparent;
   font-size: 4vmax;
-  text-shadow: 2px 2px #282c34;
+  text-shadow: 3px 3px #282c34;
 }
 
 .App .grey-button{

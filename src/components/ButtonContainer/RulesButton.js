@@ -10,7 +10,7 @@ export default class RulesButton extends Component{
             type="button"
             className="btn btn-link"
             onClick={() => {history.push('/user/rules')}}
-            ><b> How to Play: Game Rules</b> </button>
+            >How to Play: Game Rules</button>
         ));
         return <Button />
     }
