@@ -9,7 +9,7 @@ export default class Welcome extends Component {
 
         return (
             <div className="welcome">
-
+                <div className="welcome-info">
                 <h1>Welcome</h1>
                 <h5>A World Wide Game Of FUN!!</h5>
 
@@ -23,6 +23,7 @@ export default class Welcome extends Component {
                     {/* <button type="button" className="btn btn-primary enter">Enter</button> */}
                     <LoginButton />
                     <SignupButton />
+                </div>
                 </div>
 
 

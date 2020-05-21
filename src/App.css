@@ -64,8 +64,20 @@ html{
 
 .welcome{
 
-  background-color: #ff9002;
+  background-color: #ff9002;  
   
+}
+
+.welcome .welcome-info{
+
+  margin-top: 25%;
+
+}
+
+.login .loginInfo{
+
+  margin-top: 40%;
+
 }
 
 .welcome, .login, .signup, .user-home, .userStats{

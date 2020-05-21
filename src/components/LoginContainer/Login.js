@@ -7,11 +7,9 @@ export default class Login extends Component {
     render() {
         return (
             <div className="login">
-                <h1>Log In</h1>
-                <center><div className="loginInfo">
+                <div className="loginInfo">
+                    <h1>Log In</h1>
                     <form>
-
-
 
                         <input className="inputBox" type="text" name="username" placeholder="Username" />
 
@@ -35,7 +33,7 @@ export default class Login extends Component {
 
 
                     </form>
-                </div></center>
+                </div>
             </div>
         );
     }
