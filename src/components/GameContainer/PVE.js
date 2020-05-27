@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ExitGameButton from '../ButtonContainer/ExitGameButton';
+import Player from './Player';
+import { Link } from 'react-router-dom';
 
 
 export default class PVE extends Component {
@@ -8,21 +10,16 @@ export default class PVE extends Component {
 
         this.state = {
             playerChoice: "rock",
-            computerChoice: "",
+            computerChoice: "rock",
             result: "",
             playerWins: 0,
             enemyWins: 0
         }
     }
 
-   
-    //Player Choice Function
-    playerAction = (e) => {        
-        this.setState({
-            playerChoice: e.target.value
-        })
-    }  
 
+
+    //Player Selections
     rockSelect = () => {
         this.setState({
             playerChoice: "rock"
@@ -43,20 +40,20 @@ export default class PVE extends Component {
 
 
     //Game Logic
-    RPSGameplay(playerPick, computerPick) {      
-      
+    RPSGameplay(playerPick, computerPick) {
+
         if (playerPick === computerPick) {
             return 0;
         } else
-         if (
-            (playerPick === "rock" && computerPick === "scissors") ||
-            (playerPick === "paper" && computerPick === "rock") ||
-            (playerPick === "scissors" && computerPick === "paper")
+            if (
+                (playerPick === "rock" && computerPick === "scissors") ||
+                (playerPick === "paper" && computerPick === "rock") ||
+                (playerPick === "scissors" && computerPick === "paper")
             ) {
-            return 1;
-        } else {            
-            return -1;
-        }        
+                return 1;
+            } else {
+                return -1;
+            }
     }
 
     //Run Game
@@ -64,34 +61,34 @@ export default class PVE extends Component {
         //Player
         const player = this.state.playerChoice;
         console.log("Your choice", player);
-        
+
         //Computer
         const choices = ["rock", "paper", "scissors"];
         const computer = choices[Math.floor(Math.random() * 3)];
         console.log("Computer choice", computer);
-        
+
         //Result
         const finalResult = this.RPSGameplay(this.state.playerChoice, computer);
-        if(finalResult === -1){
+        if (finalResult === -1) {
             this.setState({
                 enemyWins: this.state.enemyWins + 1,
-                computerChoice: "Computer Chose: " +  computer,
-                result: "Sorry You Lost That One"
+                computerChoice: computer,
+                result: "You Lose!"
             })
 
-        } else if(finalResult === 1){
+        } else if (finalResult === 1) {
             this.setState({
                 playerWins: this.state.playerWins + 1,
-                computerChoice: "Computer Chose: " +  computer,
-                result: "Point Goes To You!"
+                computerChoice: computer,
+                result: "You Win!"
             })
-        } else{
-        
-        this.setState({
-            computerChoice: "Computer Chose: " +  computer,
-            result: "It's A Tie!! Shoot Again!"
-        }) 
-    }
+        } else {
+
+            this.setState({
+                computerChoice: computer,
+                result: "Tie!!"
+            })
+        }
 
     }
 
@@ -104,33 +101,32 @@ export default class PVE extends Component {
         const showPlayer = this.state.playerChoice;
         const showComputer = this.state.computerChoice;
         const wins = this.state.playerWins;
-        const losses = this.state.enemyWins;     
+        const losses = this.state.enemyWins;
         return (
             <div className="rps-game">
-                <div className="scoreboard">
-                    <div className="wins">
-                    Wins:
-                    <br/>
-                     {wins}
+                <div className="result-message-display">
+                    <div className="return">
+                        <Link to="/user"><button><i class="fas fa-arrow-alt-circle-left"></i></button></Link>
                     </div>
-                    <div className="losses">
-                    Losses: {losses}
-                    </div>
+                    <p id="result">{showResult}</p>
                 </div>
-                <div className="result-message-display"> 
-                <p>You Chose: {showPlayer} </p>
-                <p>{showComputer} </p>
-                <p id="result"><b>{showResult}</b></p>    
+
+
+                <div className="player-wins">
+                    Player: {wins}
+                    <Player choice={showPlayer} />
                 </div>
-                
+
+
+
                 <div className="player-choices">
                     <button
                         type="button"
                         value="rock"
                         onClick={this.rockSelect}
                     >
-                        <i class="fas fa-hand-rock" 
-                        onClick={this.rockSelect} ></i>
+                        <i class="fas fa-hand-rock"
+                            onClick={this.rockSelect} ></i>
                     </button>
 
                     <button
@@ -139,7 +135,7 @@ export default class PVE extends Component {
                         onClick={this.paperSelect}
                     >
                         <i class="fas fa-hand-paper"
-                        onClick={this.paperSelect}></i>
+                            onClick={this.paperSelect}></i>
                     </button>
 
                     <button
@@ -148,12 +144,15 @@ export default class PVE extends Component {
                         onClick={this.scissorsSelect}
                     >
                         <i class="fas fa-hand-scissors"
-                        onClick={this.scissorsSelect}
+                            onClick={this.scissorsSelect}
                         ></i>
                     </button>
-
                 </div>
-                <br/>
+
+                <div className="cpu-wins">
+                    Computer: {losses}
+                    <Player choice={showComputer} />
+                </div>
                 <div className="confirm-choice">
                     <button
                         type="button"
@@ -161,10 +160,10 @@ export default class PVE extends Component {
                         onClick={this.onShoot}
                     >Shoot!
                  </button>
-                 <ExitGameButton />
+
                 </div>
-                
-                
+
+
             </div>
         );
     }

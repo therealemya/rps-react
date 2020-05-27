@@ -239,56 +239,51 @@ html{
 
 }
 
-.App .rps-game .scoreboard {
 
-  display: flex;  
-  flex-wrap: wrap;
-  justify-content: space-between;  
-  height: 25vmax;
-  margin-top: 15%;
 
-}
-
-.App .rps-game .scoreboard .wins{
+.App .rps-game .player-wins{
 
   background-color: rgb(128, 255, 55);
   border: #282c34 solid 3px;
   border-radius: 15% 0px 15% 0px;
-  width: 50%;
+  width: 100%;
+  height: 30%;
   font-size: 55px;
   font-family: 'Bangers', cursive;
-
+  text-shadow: 3px 3px white;
 }
 
-.App .rps-game .scoreboard .losses{
+.App .rps-game .cpu-wins{
 
   background-color: rgb(255, 87, 185);
   border: #282c34 solid 3px;
   border-radius: 0px 15% 0px 15%;
-  width: 50%;
+  width: 100%;
+  height: 30%;
   font-size: 55px;
   font-family: 'Bangers', cursive;
-
+  text-shadow: 3px 3px white;
 }
 
 .App .rps-game .player-choices{
 
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 5%; 
+  flex-wrap: wrap;   
   width: 100%;
+  height: 20%;
 
 }
 
 .App .rps-game .player-choices button{  
   
-  height: 25vmax;
-  width: 10vmax;
-  margin: 15px;
-  font-size: 10vmax;
+  height: 95%;
+  width: 105px;
+  margin-top: 3px;  
+  font-size: 75px;
+  text-shadow: 3px 3px white;
 
-  background-color: transparent;
-  border: none;
+  background-color: rgb(100, 173, 241);
+  border: black solid 2px;
 }
 
 .App .rps-game .confirm-choice{
@@ -299,30 +294,44 @@ html{
 }
 
 .App .rps-game .confirm-choice button{
-
-  width: 40%;
-  
+  margin-top: 5px;
+  width: 95%;
+  font-size: 300%;
+  text-shadow: 3px 3px white;
 }
 
 .App .rps-game .result-message-display{
+  display: flex;
+  flex-wrap: wrap;
   font-size: 25px;
   font-family: 'Lalezar', cursive;
 }
 
 .App .rps-game .result-message-display #result{
-  font-size: 30px;
+  width: 50%;
+  height: 75px;
+  position: relative;
+  left: 15px;
+  top: 10px;  
+  font-size: 40px;
   font-family: 'Lalezar', cursive;
+}
+
+.App .playerChoice .choice-image{
+  height: 150px;
+  width: auto;
 }
 
 .App .userStats{
   font-family: 'Bangers', cursive;
 }
 
-.App .userStats .return{
+.App .userStats .return, .App .rps-game .return{
   display: flex;
   justify-content: flex-start;
-  margin-top: 25px;
-  margin-left: 25px;
+  margin-top: 10px;
+  margin-left: 10px; 
+   
 }
 
 .App .userStats .user-stats-record{
