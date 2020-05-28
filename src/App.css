@@ -31,6 +31,7 @@ html{
   border-radius: 15px;
   background-color: rgb(81, 156, 255);
   color: #282c34;
+  text-shadow: 2px 2px white;
 
 }
 
@@ -67,6 +68,13 @@ html{
   background-color: #ff9002;  
   
 }
+
+.welcome h1, h5{
+
+  text-shadow: 2px 2px white;
+
+}
+
 
 .welcome .welcome-info{
 
@@ -105,14 +113,15 @@ html{
 .App .btn-link{
 
   border-style: none;
-  color:rgb(81, 156, 255);
+  color:#282c34;
   background-color: transparent;
   font-size: 4vmax;
-  text-shadow: 3px 3px #282c34;
+  text-shadow: 2px 2px rgb(81, 156, 255);
 }
 
 .App .grey-button{
   background-color: #282c34;
+  text-shadow: 3px 3px rgb(81, 156, 255);
   color: whitesmoke;
 }
 
@@ -354,7 +363,9 @@ html{
   width: 33%;
   font-size: 175%;
   border-radius: 20%;
+  text-shadow: 2px 2px white;
 }
+
 
 .App .userStats .user-stats-record .win{
   background-color: rgb(128, 255, 55);  
@@ -374,9 +385,12 @@ html{
   height: 20vmax;
   justify-content: space-evenly;
   font-size: 250%;
-  border: #282c34 solid 5px;
+  text-shadow: 2px 2px white;
+  border: #282c34 solid 5px;  
   border-radius: 15%;
   margin: 25px;
+  background: rgb(81,156,255);
+background: linear-gradient(90deg, rgba(81,156,255,1) 0%, rgba(128,255,55,1) 67%, rgba(255,87,185,1) 100%);
 }
 
 .App .userStats .achievements #title{
