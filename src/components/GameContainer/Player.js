@@ -2,6 +2,7 @@ import React from 'react';
 import rock from '../../images/rock.png';
 import paper from '../../images/paper.png';
 import scissors from '../../images/scissors.png';
+import question from '../../images/question.png';
 
 const Player = ({ choice }) => (
     <>
@@ -11,7 +12,8 @@ const Player = ({ choice }) => (
                 src={
                     choice === "rock" ? rock :
                         choice === "paper" ? paper :
-                            scissors
+                            choice === "scissors" ? scissors :
+                            question
                 }
                 alt="rps images"
             />

@@ -26,7 +26,7 @@ export default class UserStats extends Component {
 
                     <div className="win"> Wins: </div>
                     <div className="loss"> Losses: </div>
-                    <div className="tie"> Ties: </div>
+                    
 
                 </div>
 

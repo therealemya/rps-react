@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ExitGameButton from '../ButtonContainer/ExitGameButton';
 import Player from './Player';
 import { Link } from 'react-router-dom';
+
 
 
 export default class PVE extends Component {
@@ -9,8 +9,8 @@ export default class PVE extends Component {
         super(props);
 
         this.state = {
-            playerChoice: "rock",
-            computerChoice: "rock",
+            playerChoice: "",
+            computerChoice: "",
             result: "",
             playerWins: 0,
             enemyWins: 0
@@ -102,21 +102,34 @@ export default class PVE extends Component {
         const showComputer = this.state.computerChoice;
         const wins = this.state.playerWins;
         const losses = this.state.enemyWins;
+        const gamePoint = {
+            color: "#0091BF"
+        }
+
         return (
             <div className="rps-game">
                 <div className="result-message-display">
                     <div className="return">
-                        <Link to="/user"><button><i class="fas fa-arrow-alt-circle-left"></i></button></Link>
+                        <Link to="/user">
+                            <button>
+                                <i class="fas fa-arrow-alt-circle-left"></i>
+                            </button>
+                        </Link>
                     </div>
                     <p id="result">{showResult}</p>
                 </div>
 
 
                 <div className="player-wins">
-                    Player: {wins}
+                    Player
+
+                    <div className="starbar-player">
+                        {wins >= 1 ? <i className="fas fa-star" style={gamePoint}></i> : <i className="fas fa-star"></i>}
+                        {wins >= 2 ? <i className="fas fa-star" style={gamePoint}></i> : <i className="fas fa-star"></i>}
+                        {wins >= 3 ? <i className="fas fa-star" style={gamePoint}></i> : <i className="fas fa-star"></i>}
+                    </div>
                     <Player choice={showPlayer} />
                 </div>
-
 
 
                 <div className="player-choices">
@@ -150,9 +163,15 @@ export default class PVE extends Component {
                 </div>
 
                 <div className="cpu-wins">
-                    Computer: {losses}
+                    Computer
+                    <div className="starbar-cpu">
+                        {losses >= 1 ? <i className="fas fa-star" style={gamePoint}></i> : <i className="fas fa-star"></i>}
+                        {losses >= 2 ? <i className="fas fa-star" style={gamePoint}></i> : <i className="fas fa-star"></i>}
+                        {losses >= 3 ? <i className="fas fa-star" style={gamePoint}></i> : <i className="fas fa-star"></i>}
+                    </div>
                     <Player choice={showComputer} />
                 </div>
+
                 <div className="confirm-choice">
                     <button
                         type="button"
