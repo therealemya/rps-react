@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import Player from './Player';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom'
+import GameOver from '../CustomContainer/GameOver';
 
 
 
 export default class PVE extends Component {
-    constructor(props) {
+    constructor(props){
         super(props);
 
-        this.state = {
-            playerChoice: "",
-            computerChoice: "",
-            result: "",
-            playerWins: 0,
-            enemyWins: 0
+        this.state={
+            scoreW:this.props.playerScore,
+            scoreL:this.props.enemyScore,
+            hasFinished: false,
+            updatedWins: this.props.recordWins,
+            updatedLosses: this.props.recordLoss,
+            resultDisplay: "",
+            matchResult: "",
+            playerChoice: "rock",
+            computerChoice: ""            
         }
     }
-
-
 
     //Player Selections
     rockSelect = () => {
@@ -37,8 +40,8 @@ export default class PVE extends Component {
             playerChoice: "scissors"
         })
     }
-
-
+    
+    
     //Game Logic
     RPSGameplay(playerPick, computerPick) {
 
@@ -54,10 +57,21 @@ export default class PVE extends Component {
             } else {
                 return -1;
             }
+
+    }    
+
+    //Play Again
+    handleReset = (decision) =>{
+        this.setState({
+            hasFinished: decision,
+            scoreW: 0,
+            scoreL: 0
+        })
     }
 
     //Run Game
-    onShoot = () => {
+    onShoot = () => {        
+
         //Player
         const player = this.state.playerChoice;
         console.log("Your choice", player);
@@ -65,43 +79,71 @@ export default class PVE extends Component {
         //Computer
         const choices = ["rock", "paper", "scissors"];
         const computer = choices[Math.floor(Math.random() * 3)];
-        console.log("Computer choice", computer);
+        console.log("Computer choice", computer);      
+        
 
         //Result
         const finalResult = this.RPSGameplay(this.state.playerChoice, computer);
         if (finalResult === -1) {
-            this.setState({
-                enemyWins: this.state.enemyWins + 1,
+            this.props.updateEnemyState(this.state.scoreL + 1);
+            this.setState({   
+                scoreL: this.state.scoreL + 1,             
                 computerChoice: computer,
-                result: "You Lose!"
+                resultDisplay: "You Lose!"
             })
 
+            //Checking If Match Point Loss
+            if(this.state.scoreL + 1 === 3){
+                this.setState({
+                    hasFinished: true,
+                    matchResult: "You Lose!",
+                    updatedLosses: this.state.updatedLosses + 1,
+                    resultDisplay: "",
+                    computerChoice: ""
+                })
+                this.props.updateRecordLoss(this.props.recordLoss + 1);
+                this.props.updatePlayerState(0);
+                this.props.updateEnemyState(0);
+            }
+
         } else if (finalResult === 1) {
-            this.setState({
-                playerWins: this.state.playerWins + 1,
+            this.props.updatePlayerState(this.state.scoreW + 1);
+            this.setState({  
+                scoreW: this.state.scoreW + 1,              
                 computerChoice: computer,
-                result: "You Win!"
+                resultDisplay: "You Win!"
             })
+
+            //Checking If Match Point Win
+            if(this.state.scoreW + 1 === 3){
+                this.setState({
+                    hasFinished: true,
+                    matchResult: "You Win!",
+                    updatedWins: this.state.updatedWins + 1,
+                    resultDisplay: "",
+                    computerChoice: ""
+                })
+                this.props.updateRecordWins(this.props.recordWins + 1);
+                this.props.updatePlayerState(0);
+                this.props.updateEnemyState(0);
+            }
         } else {
 
             this.setState({
                 computerChoice: computer,
-                result: "Tie!!"
+                resultDisplay: "Tie!!"
             })
-        }
-
+        }        
     }
 
 
-
-
-
     render() {
-        const showResult = this.state.result;
+        const showResult = this.state.resultDisplay;
         const showPlayer = this.state.playerChoice;
         const showComputer = this.state.computerChoice;
-        const wins = this.state.playerWins;
-        const losses = this.state.enemyWins;
+        const wins = this.state.scoreW;
+        const losses = this.state.scoreL;
+        const isComplete = this.state.hasFinished;
         const gamePoint = {
             color: "#0091BF"
         }
@@ -116,7 +158,7 @@ export default class PVE extends Component {
                             </button>
                         </Link>
                     </div>
-                    <p id="result">{showResult}</p>
+                    <p id="result">{showResult}</p>                    
                 </div>
 
 
@@ -163,7 +205,7 @@ export default class PVE extends Component {
                 </div>
 
                 <div className="cpu-wins">
-                    Computer
+                    Computer 
                     <div className="starbar-cpu">
                         {losses >= 1 ? <i className="fas fa-star" style={gamePoint}></i> : <i className="fas fa-star"></i>}
                         {losses >= 2 ? <i className="fas fa-star" style={gamePoint}></i> : <i className="fas fa-star"></i>}
@@ -181,10 +223,14 @@ export default class PVE extends Component {
                  </button>
 
                 </div>
-
-
+                {isComplete ?
+                <GameOver 
+                reset={this.handleReset}                              
+                matchResult={this.state.matchResult}
+                /> :
+                null
+                }            
             </div>
         );
     }
 }
-

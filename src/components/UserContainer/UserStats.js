@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 
+
 export default class UserStats extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            playerWins: this.props.recordWins,
+            playerLosses: this.props.recordLoss
+        }
+    }
 
     render() {
         return (
@@ -24,8 +32,14 @@ export default class UserStats extends Component {
 
                 <div className="user-stats-record">
 
-                    <div className="win"> Wins: </div>
-                    <div className="loss"> Losses: </div>
+                    <div className="win"> Wins: 
+                    <br/> 
+                    {this.state.playerWins}
+                    </div>
+                    <div className="loss"> Losses: 
+                    <br/> 
+                    {this.state.playerLosses}
+                    </div>
                     
 
                 </div>
