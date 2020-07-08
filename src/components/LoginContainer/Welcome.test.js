@@ -26,6 +26,18 @@ describe('Welcome Component', () => {
         const text = wrapper.find('h5').text();
         expect(text).toEqual("A World Wide Game Of FUN!!");
     })
+
+    it('login button is clicked',() => {
+        const wrapper = shallow(<Welcome />);
+        const LoginButton = wrapper.find('LoginButton');
+        LoginButton.simulate('click');
+    })
+
+    it('signup button is clicked',() => {
+        const wrapper = shallow(<Welcome />);
+        const SignupButton = wrapper.find('LoginButton');
+        SignupButton.simulate('click');
+    })
 })
 
 
