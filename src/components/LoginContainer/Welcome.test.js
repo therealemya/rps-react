@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Welcome from './Welcome';
 
+
 describe('Welcome Component', () => {
     it('only has 1 h1 in Welcome', () => {
         const wrapper = shallow(<Welcome />);
@@ -35,10 +36,35 @@ describe('Welcome Component', () => {
 
     it('signup button is clicked',() => {
         const wrapper = shallow(<Welcome />);
-        const SignupButton = wrapper.find('LoginButton');
+        const SignupButton = wrapper.find('SignupButton');
         SignupButton.simulate('click');
     })
+
+    it('signup button is found',() => {
+        const wrapper = shallow(<Welcome />);
+        const SignupButton = wrapper.find('SignupButton');
+        expect(SignupButton).toHaveLength(1);
+    })
+
+     it('login button is found',() => {
+        const wrapper = shallow(<Welcome />);
+        const LoginButton = wrapper.find('LoginButton');
+        expect(LoginButton).toHaveLength(1);
+    })
+
+    it('login button has text within it ',() => {
+        const wrapper = shallow(<Welcome />);
+        const LoginButton = wrapper.find('LoginButton');
+        expect(LoginButton.exists()).toBe(true);
+    })
+
+     it('signup button has text within it ',() => {
+        const wrapper = shallow(<Welcome />);
+        const SignupButton = wrapper.find('SignupButton');
+        expect(SignupButton.exists()).toBe(true);
+    })
 })
+
 
 
 
