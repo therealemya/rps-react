@@ -27,3 +27,4 @@ describe('UserHome Component', () => {
         RulesButton.simulate('click');
     })
 })
+
