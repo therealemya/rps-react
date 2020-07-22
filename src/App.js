@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Amplify from "aws-amplify";
+import Amplify, { Auth } from 'aws-amplify';
+  import awsmobile from './aws-exports.js';
+  import { AmplifyAuthenticator,AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react';​
+  Amplify.configure(awsmobile);​
+  function App() {  }​
+  export default App;
 
 //Importing Login Features
 import Welcome from './components/LoginContainer/Welcome';
