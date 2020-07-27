@@ -74,27 +74,12 @@ Parameters:
   userpoolClientSetAttributes:
     Type: String
             
-  sharedId:
+  authSelections:
     Type: String
               
   resourceName:
     Type: String
-              
-  authSelections:
-    Type: String
-                                      
-  useDefault:
-    Type: String
-                      
-  usernameAttributes:
-    Type: CommaDelimitedList
-              
-  userPoolGroupList:
-    Type: CommaDelimitedList
-                          
-  dependsOn:
-    Type: CommaDelimitedList
-    
+                                    
 Conditions:
   ShouldNotCreateEnvResources: !Equals [ !Ref env, NONE ]
 
@@ -106,7 +91,7 @@ Resources:
   # Created to allow the UserPool SMS Config to publish via the Simple Notification Service during MFA Process
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, 'rpsrea504b1f90_sns-role', !Join ['',[ 'sns', '504b1f90', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, 'rpsrea1e0913cd_sns-role', !Join ['',[ 'sns', 'undefined', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
       AssumeRolePolicyDocument: 
         Version: "2012-10-17"
         Statement: 
@@ -118,10 +103,10 @@ Resources:
               - "sts:AssumeRole"
             Condition: 
               StringEquals:
-                sts:ExternalId: rpsrea504b1f90_role_external_id
+                sts:ExternalId: rpsrea1e0913cd_role_external_id
       Policies: 
         - 
-          PolicyName: rpsrea504b1f90-sns-policy
+          PolicyName: rpsrea1e0913cd-sns-policy
           PolicyDocument: 
             Version: "2012-10-17"
             Statement: 
@@ -162,14 +147,12 @@ Resources:
           RequireNumbers: false
           RequireSymbols: false
           RequireUppercase: false
-      
-      UsernameAttributes: !Ref usernameAttributes
           
       MfaConfiguration: !Ref mfaConfiguration
       SmsVerificationMessage: !Ref smsVerificationMessage
       SmsConfiguration: 
         SnsCallerArn: !GetAtt SNSRole.Arn
-        ExternalId: rpsrea504b1f90_role_external_id
+        ExternalId: rpsrea1e0913cd_role_external_id
     
   
   UserPoolClientWeb:
@@ -177,7 +160,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: rpsrea504b1f90_app_clientWeb
+      ClientName: rpsrea1e0913cd_app_clientWeb
       
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
       UserPoolId: !Ref UserPool
@@ -187,7 +170,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: rpsrea504b1f90_app_client
+      ClientName: rpsrea1e0913cd_app_client
       
       GenerateSecret: !Ref userpoolClientGenerateSecret
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
@@ -198,7 +181,7 @@ Resources:
   # Created to execute Lambda which gets userpool app client config values
     Type: 'AWS::IAM::Role'
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',['upClientLambdaRole', '504b1f90', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',['upClientLambdaRole', 'undefined', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -252,7 +235,7 @@ Resources:
   # Marked as depending on UserPoolClientRole for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: rpsrea504b1f90_userpoolclient_lambda_iam_policy
+      PolicyName: rpsrea1e0913cd_userpoolclient_lambda_iam_policy
       Roles: 
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -269,7 +252,7 @@ Resources:
   # Marked as depending on UserPoolClientLambdaPolicy for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: rpsrea504b1f90_userpoolclient_lambda_log_policy
+      PolicyName: rpsrea1e0913cd_userpoolclient_lambda_log_policy
       Roles: 
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -309,7 +292,7 @@ Resources:
   # Always created
     Type: AWS::Cognito::IdentityPool
     Properties: 
-      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'rpsreact504b1f90_identitypool_504b1f90', !Join ['',['rpsreact504b1f90_identitypool_504b1f90', '__', !Ref env]]]
+      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'rpsreact_identitypool_1e0913cd', !Join ['',['rpsreact_identitypool_1e0913cd', '__', !Ref env]]]
       
       CognitoIdentityProviders:
         - ClientId:  !Ref UserPoolClient

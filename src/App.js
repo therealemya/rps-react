@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Amplify, { Auth } from 'aws-amplify';
-import awsmobile from './aws-exports.js';
+
+
 
 
  
@@ -21,10 +21,14 @@ import Terms from './components/CustomContainer/Terms';
 import Rules from './components/CustomContainer/Rules';
 import PVE from './components/GameContainer/PVE';
 import PVP from './components/GameContainer/PVP';
-import { AmplifyAuthenticator,AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react';
-Amplify.configure (awsmobile);
 
-export default class App extends Component {
+//importing amplify auth
+import Amplify, {Auth} from 'aws-amplify';
+import {withAuthenticator} from 'aws-amplify-react';
+import MyAmplifyTheme from './MyAmplifyTheme';
+
+
+class App extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -61,11 +65,11 @@ export default class App extends Component {
             <Router>
                 <div className="App">
                     <Switch>
-                        <Route exact path='/' component={Welcome} />
-                        <Route path='/welcome' component={Welcome} />
+                        <Route exact path='/' component={UserHome} />
+                        {/* <Route path='/welcome' component={Welcome} />
                         <Route path='/login' component={Login} />
-                        <Route path='/signup' component={Signup} />
-                        <Route path='/terms' component={Terms} />
+                        <Route path='/signup' component={Signup} /> */}
+                        {/* <Route path='/terms' component={Terms} /> */}
                         <Route exact path='/user' component={UserHome} />
                         <Route path='/user/rules' component={Rules} />
                         <Route path='/user/profile' render={(props) =>
@@ -94,3 +98,6 @@ export default class App extends Component {
         );
     }
 }
+export default withAuthenticator(App, {
+    theme: MyAmplifyTheme
+});

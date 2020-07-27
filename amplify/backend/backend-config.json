@@ -1,10 +1,51 @@
 {
-	"auth": {
-		"rpsreact504b1f90": {
-			"service": "Cognito",
+	"storage": {
+		"rpsplayerrecord": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"function": {
+		"rpsuserfunc": {
+			"build": true,
 			"providerPlugin": "awscloudformation",
-			"dependsOn": [],
-			"customAuth": false
+			"service": "Lambda",
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "rpsplayerrecord",
+					"attributes": [
+						"Name",
+						"Arn"
+					],
+					"attributeEnvMap": {
+						"Name": "TABLE_NAME",
+						"Arn": "TABLE_ARN"
+					}
+				}
+			]
+		}
+	},
+	"auth": {
+		"cognitoa4a48bf7": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"api": {
+		"rpsapi": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "rpsuserfunc",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
 		}
 	}
 }

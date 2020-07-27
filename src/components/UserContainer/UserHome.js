@@ -4,7 +4,7 @@ import RulesButton from '../ButtonContainer/RulesButton';
 import { Link } from 'react-router-dom';
 import logolite from '../../images/logolite.png';
 import LogoutButton from '../ButtonContainer/LogoutButton';
-
+import {AmplifySignOut} from '@aws-amplify/ui-react';
 
 
 
@@ -29,7 +29,8 @@ export default class UserHome extends Component {
                         <br /> 
                         <Link to="/user/donation" id="user-home-link"><button>Donate</button></Link>
                         <br/>
-                        <LogoutButton />
+                        {/* {LogoutButton} */}
+                        <AmplifySignOut />
                         
                         <RulesButton />
                     </div>

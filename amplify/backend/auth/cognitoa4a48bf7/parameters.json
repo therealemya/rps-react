@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "rpsreact504b1f90_identitypool_504b1f90",
+    "identityPoolName": "rpsreact_identitypool_1e0913cd",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "rpsrea504b1f90",
-    "userPoolName": "rpsreact504b1f90_userpool_504b1f90",
+    "resourceNameTruncated": "rpsrea1e0913cd",
+    "userPoolName": "rpsreact_userpool_1e0913cd",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,11 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "rpsrea504b1f90_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "rpsrea1e0913cd_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "504b1f90",
-    "resourceName": "rpsreact504b1f90",
     "authSelections": "identityPoolAndUserPool",
+    "resourceName": "cognitoa4a48bf7",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -44,11 +43,5 @@
             "UnauthRole",
             "Arn"
         ]
-    },
-    "useDefault": "default",
-    "usernameAttributes": [
-        "email"
-    ],
-    "userPoolGroupList": [],
-    "dependsOn": []
+    }
 }
