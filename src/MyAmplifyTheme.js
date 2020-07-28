@@ -1,7 +1,7 @@
-const bgCol = 'white';
+const bgCol = 'violet';
 
 export const Container = {
-  fontWeight: '400',
+  fontWeight: '700',
 };
 export const FormContainer = {
   textAlign: 'center',
@@ -9,30 +9,32 @@ export const FormContainer = {
 };
 export const FormSection = {
   position: 'relative',
-  marginBottom: '20px',
+  marginBottom: '10px',
   backgroundColor: bgCol,
   padding: '35px 40px',
-  textAlign: 'left',
+  textAlign: 'center',
   display: 'inline-block',
-  minWidth: '380px',
-  borderRadius: '6px',
-  boxShadow: '1px 1px 4px 0 rgba(0,0,0,0.15)',
+  minWidth: '250px',
+  borderRadius: '5px',
+  boxShadow: '10px 15px 4px 0 rgba(0,0,0,0.15)',
 };
 export const FormField = {
-  marginBottom: '22px',
+  marginBottom: '20px',
 };
 export const SectionHeader = {
-  color: '#555',
-  marginBottom: '30px',
-  fontSize: '18px',
-  fontWeight: '500',
+  color: 'black',
+  marginBottom: '20px',
+  fontSize: '30px',
+  fontWeight: '500',  
+  fontFamily: 'Bangers, cursive',
+  
 };
 export const SectionBody = {
-  marginBottom: '30px',
+  marginBottom: '50px',
 };
 export const SectionFooter = {
   fontSize: '14px',
-  color: '#708294',
+  color: 'black',
   display: 'flex',
   flexDirection: 'row-reverse',
   alignItems: 'flex-start',
@@ -47,14 +49,14 @@ export const SectionFooterSecondaryContent = {
 export const Input = {
   display: 'block',
   width: '100%',
-  padding: '16px',
-  fontSize: '14px',
-  fontFamily: 'inherit',
+  padding: '10px',
+  fontSize: '16px',
+  fontFamily: 'Bangers, cursive',
   color: '#152939',
-  backgroundColor: '#fff',
+  backgroundColor: 'turquoise',
   backgroundImage: 'none',
-  border: '1px solid #C4C4C4',
-  borderRadius: '3px',
+  border: '3px solid black',
+  borderRadius: '75px',
   boxSizing: 'border-box',
   marginBottom: '10px',
 };
@@ -87,7 +89,7 @@ export const SignInButton = {
   marginBottom: '10px',
   cursor: 'pointer',
   padding: 0,
-  fontFamily: 'Amazon Ember',
+  fontFamily: 'Bangers',
   color: '#fff',
   fontSize: '14px',
   '#google_signin_btn': {

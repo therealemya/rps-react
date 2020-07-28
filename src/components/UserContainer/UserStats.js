@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import {withAuthenticator} from 'aws-amplify-react';
+import MyAmplifyTheme from '../../MyAmplifyTheme';
 
 
 
-export default class UserStats extends Component {
+ class UserStats extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -60,3 +62,7 @@ export default class UserStats extends Component {
         );
     }
 }
+
+export default withAuthenticator(UserStats, {
+    theme: MyAmplifyTheme
+});

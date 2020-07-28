@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import LoginButton from '../ButtonContainer/LoginButton';
 import SignupButton from '../ButtonContainer/SignupButton';
 import logolite from '../../images/logolite.png';
-
+import MyAmplifyTheme from '../../MyAmplifyTheme';
+import {Link} from 'react-router-dom';
 
 export default class Welcome extends Component {
     render() {
@@ -21,8 +22,7 @@ export default class Welcome extends Component {
 
                 <div class="btn-group" id="login-btn-group" role="group">
                     {/* <button type="button" className="btn btn-primary enter">Enter</button> */}
-                    <LoginButton />
-                    <SignupButton />
+                    <Link to="/user" id="user-home-link"><button>Enter</button></Link>
                 </div>
                 </div>
 
@@ -34,3 +34,5 @@ export default class Welcome extends Component {
 
     }
 }
+
+

@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import Player from './Player';
 import {Link} from 'react-router-dom'
 import GameOver from '../CustomContainer/GameOver';
+import {withAuthenticator} from 'aws-amplify-react';
+import MyAmplifyTheme from '../../MyAmplifyTheme';
 
 
-
-export default class PVE extends Component {
+ class PVE extends Component {
     constructor(props){
         super(props);
 
@@ -234,3 +235,7 @@ export default class PVE extends Component {
         );
     }
 }
+
+export default withAuthenticator(PVE, {
+    theme: MyAmplifyTheme
+});

@@ -22,13 +22,10 @@ import Rules from './components/CustomContainer/Rules';
 import PVE from './components/GameContainer/PVE';
 import PVP from './components/GameContainer/PVP';
 
-//importing amplify auth
-import Amplify, {Auth} from 'aws-amplify';
-import {withAuthenticator} from 'aws-amplify-react';
-import MyAmplifyTheme from './MyAmplifyTheme';
 
 
-class App extends Component {
+
+export default class App extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -65,7 +62,7 @@ class App extends Component {
             <Router>
                 <div className="App">
                     <Switch>
-                        <Route exact path='/' component={UserHome} />
+                        <Route exact path='/' component={Welcome} />
                         {/* <Route path='/welcome' component={Welcome} />
                         <Route path='/login' component={Login} />
                         <Route path='/signup' component={Signup} /> */}
@@ -98,6 +95,3 @@ class App extends Component {
         );
     }
 }
-export default withAuthenticator(App, {
-    theme: MyAmplifyTheme
-});

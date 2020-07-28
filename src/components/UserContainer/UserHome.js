@@ -3,12 +3,16 @@ import React, { Component } from 'react';
 import RulesButton from '../ButtonContainer/RulesButton';
 import { Link } from 'react-router-dom';
 import logolite from '../../images/logolite.png';
-import LogoutButton from '../ButtonContainer/LogoutButton';
-import {AmplifySignOut} from '@aws-amplify/ui-react';
+
+import {withAuthenticator} from 'aws-amplify-react';
+import MyAmplifyTheme from '../../MyAmplifyTheme';
+import {SignOut} from 'aws-amplify-react';
 
 
 
-export default class UserHome extends Component {
+
+
+ class UserHome extends Component {
 
     render() {
         return (
@@ -30,7 +34,7 @@ export default class UserHome extends Component {
                         <Link to="/user/donation" id="user-home-link"><button>Donate</button></Link>
                         <br/>
                         {/* {LogoutButton} */}
-                        <AmplifySignOut />
+                        <SignOut />
                         
                         <RulesButton />
                     </div>
@@ -39,3 +43,7 @@ export default class UserHome extends Component {
         );
     }
 }
+
+export default withAuthenticator(UserHome, {
+    theme: MyAmplifyTheme
+});
