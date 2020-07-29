@@ -1,7 +1,8 @@
-const bgCol = 'violet';
-
+const bgCol = 'white';
 export const Container = {
-  fontWeight: '700',
+  fontWeight: '400',
+  fontSize: '25px',
+  fontFamily: 'Bangers'
 };
 export const FormContainer = {
   textAlign: 'center',
@@ -9,32 +10,32 @@ export const FormContainer = {
 };
 export const FormSection = {
   position: 'relative',
-  marginBottom: '10px',
+  marginBottom: '20px',
   backgroundColor: bgCol,
   padding: '35px 40px',
-  textAlign: 'center',
+  textAlign: 'left',
   display: 'inline-block',
-  minWidth: '250px',
-  borderRadius: '5px',
-  boxShadow: '10px 15px 4px 0 rgba(0,0,0,0.15)',
+  minWidth: '380px',
+  borderRadius: '6px',
+  boxShadow: '1px 1px 4px 0 rgba(0,0,0,0.15)',
 };
 export const FormField = {
-  marginBottom: '20px',
+  marginBottom: '22px',
 };
 export const SectionHeader = {
-  color: 'black',
-  marginBottom: '20px',
+  color: '#555',
+  marginBottom: '30px',
   fontSize: '30px',
-  fontWeight: '500',  
-  fontFamily: 'Bangers, cursive',
-  
+  fontFamily: 'Bangers',
+  fontWeight: '500',
 };
 export const SectionBody = {
-  marginBottom: '50px',
+  marginBottom: '30px',
 };
+//No Account CSS
 export const SectionFooter = {
-  fontSize: '14px',
-  color: 'black',
+  fontSize: '17px',
+  color: '#282C34',
   display: 'flex',
   flexDirection: 'row-reverse',
   alignItems: 'flex-start',
@@ -49,23 +50,21 @@ export const SectionFooterSecondaryContent = {
 export const Input = {
   display: 'block',
   width: '100%',
-  padding: '10px',
-  fontSize: '16px',
-  fontFamily: 'Bangers, cursive',
+  padding: '16px',
+  fontSize: '20px',
+  fontFamily: 'Bangers',
   color: '#152939',
-  backgroundColor: 'turquoise',
+  backgroundColor: '#fff',
   backgroundImage: 'none',
-  border: '3px solid black',
-  borderRadius: '75px',
+  border: '1px solid #C4C4C4',
+  borderRadius: '35px',
   boxSizing: 'border-box',
   marginBottom: '10px',
 };
 export const Button = {
   display: 'inline-block',
-  marginBottom: '0',
-  fontSize: '12px',
-  fontWeight: 800,
-  borderRadius: '0.25em',
+  marginBottom: '0',  
+  borderRadius: '15px',
   lineHeight: '1.42857143',
   textAlign: 'center',
   whiteSpace: 'nowrap',
@@ -73,24 +72,32 @@ export const Button = {
   touchAction: 'manipulation',
   cursor: 'pointer',
   userSelect: 'none',
-  backgroundImage: 'none',
-  color: '#fff',
-  backgroundColor: '#2673B6',
-  borderColor: '#ccc',
+  backgroundImage: 'none',  
+  backgroundColor: '#519CFF',
+  border: 'solid',
+  borderColor: '#282C34',
   textTransform: 'uppercase',
   padding: '1em 1em',
-  letterSpacing: '1.1px',
-  border: 'none',
+  letterSpacing: '1.1px', 
+  fontSize: '20px',
+  fontWeight: 800,
+  fontFamily: 'Bangers',
+  color: '#282C34',
+  textShadow: '2px 2px white',
 };
 export const SignInButton = {
   position: 'relative',
   width: '100%',
   borderRadius: '4px',
+  backgroundColor: '#519CFF',
+  borderColor: '#282C34',
   marginBottom: '10px',
   cursor: 'pointer',
   padding: 0,
   fontFamily: 'Bangers',
-  color: '#fff',
+  color: '#282C34',
+  textShadowColor: 'white',
+  textShadowOffset: {width: 2, height: 2},
   fontSize: '14px',
   '#google_signin_btn': {
     backgroundColor: '#4285F4',
@@ -155,21 +162,25 @@ export const ActionRow = {
 export const FormRow = {
   marginBottom: '12px',
 };
+//Reset Password CSS 
 export const A = {
-  color: '#2673B6',
+  color: '#519CFF',
   cursor: 'pointer',
+  fontSize: '17px',   
 };
+//Forgot Password CSS
 export const Hint = {
-  color: '#828282',
-  fontSize: '12px',
+    fontSize: '17px',
+    color: '#282C34',
 };
 export const Radio = {
   marginRight: '18px',
   verticalAlign: 'bottom',
 };
 export const InputLabel = {
-  color: '#8596A6',
-  fontSize: '14px',
+  color: '#282C34',
+  fontSize: '20px',
+  fontFamily: 'Bangers',
   marginBottom: '8px',
 };
 const MyAmplifyTheme = {
