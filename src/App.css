@@ -83,6 +83,11 @@ html{
 
 }
 
+.welcome .btn-group{
+    display: flex;
+    justify-content: center;
+}
+
 .login .loginInfo{
 
   margin-top: 40%;

@@ -74,7 +74,7 @@ export const Button = {
   cursor: 'pointer',
   userSelect: 'none',
   backgroundImage: 'none',
-  color: '#fff',
+  color: 'black',
   backgroundColor: '#2673B6',
   borderColor: '#ccc',
   textTransform: 'uppercase',
